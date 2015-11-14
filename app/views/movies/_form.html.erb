@@ -1,0 +1,12 @@
+<div>
+	<ul class="actions">
+		<li><%= link_to "Home", root_path, class: "btn btn-success"%></li>
+	</ul>
+</div>
+
+<%= simple_form_for(movie) do |f| %>
+	<%= f.input :title %>
+	<%= f.input :description %>
+	<%= f.input :year_released %>
+	<%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

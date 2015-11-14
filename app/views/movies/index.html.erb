@@ -1,0 +1,29 @@
+<h1>Welcome to The Movie App</h1>
+<hr />
+<div>
+	<%= form_tag("/", method: "get") do %>
+		<%= label_tag(:q, "Search for:") %>
+		<%= text_field_tag(:q) %>
+		<%= submit_tag("Search") %>
+	<% end %>
+
+	<hr />
+
+	<ul class="actions">
+		<li><%= link_to "New Movie", new_movie_path, class: "btn btn-warning"%></li>
+	</ul>
+</div>
+
+<div>
+	<% @movies.each do |movie| %>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h2><%= link_to movie.title, movie %></h2>
+			</div>
+			<div class="panel-body">
+				<p><%= movie.description %></p>
+				<p><%= movie.year_released %></p>
+			</div>
+		</div>
+	<% end %>
+</div>
